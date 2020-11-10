@@ -9,8 +9,6 @@ class InitialPage extends StatefulWidget {
 }
 
 class _InitialPageState extends State<InitialPage> {
-  final inicioEleicao = DateTime.parse("2020-09-16 11:50:04Z");
-
   @override
   Widget build(BuildContext context) {
     final dataInicioEleicao = DateTime(2020, 11, 25); //25/11

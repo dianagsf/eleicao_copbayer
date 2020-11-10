@@ -133,13 +133,17 @@ class _ResultadoPageState extends State<ResultadoPage> {
                                 )
                               : widget.area.compareTo('RJ') == 0
                                   ? _.resultado.length < 28
-                                      ? buildListResultado(
-                                          _.resultado.sublist(14))
+                                      ? _.resultado.length <= 14
+                                          ? Container()
+                                          : buildListResultado(
+                                              _.resultado.sublist(14))
                                       : buildListResultado(
                                           _.resultado.sublist(14, 28))
                                   : _.resultado.length < 20
-                                      ? buildListResultado(
-                                          _.resultado.sublist(10))
+                                      ? _.resultado.length <= 10
+                                          ? Container()
+                                          : buildListResultado(
+                                              _.resultado.sublist(10))
                                       : buildListResultado(
                                           _.resultado.sublist(10, 20));
                         },
@@ -175,11 +179,11 @@ class _ResultadoPageState extends State<ResultadoPage> {
                                   ? _.resultado.length > 28
                                       ? buildListResultado(
                                           _.resultado.sublist(28))
-                                      : null
+                                      : Container()
                                   : _.resultado.length > 20
                                       ? buildListResultado(
                                           _.resultado.sublist(20))
-                                      : null;
+                                      : Container();
                         },
                       ),
                     ),
